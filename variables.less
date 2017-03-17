@@ -1,433 +1,616 @@
-/* Farbpalette für Corporate Design der Firma, Webseite etc. */
-@farbe-1				: #075807;
-@farbe-2				: #097609;
-@farbe-3				: #70AF1A;
-@farbe-4				: #B9D40B;
-@farbe-5				: #E5EB0B;
+/*
+Name							: variables.less
+Author							: Erik Wahl
+Author Mail						: erik[dot]wahl[at]outlook[dot]com
+License							: GNU General Public License v3
+License URI						: https://www.gnu.org/licenses/gpl-3.0
+Description						: Different settings and Variables for simply use for development any websites ..
 
-/* Border */
-@border-color			: #555;
-@border					: 1px solid @border-color;
+	1. Farbpalette für Corporate Design
+	
+	2. Rahmen
+	
+	3. Schrift
+		3.1 Schriftfamile (Content, Headline)
+		3.2 Schrifteinstellungen (Groesse, Linenabstand, Schriftgewicht)
+		
+	4. Schwarz / Weiss
+		4.1 Transparent
+		
+	5. Corporate Design Farben	
+		5.1 Farbe 1 (Transparent, Hell, Dunkel)
+		5.2 Farbe 2 (Transparent, Hell, Dunkel)
+		5.3 Farbe 3 (Transparent, Hell, Dunkel)
+		5.4 Farbe 4 (Transparent, Hell, Dunkel)
+		5.5 Farbe 5 (Transparent, Hell, Dunkel)
+		
+	6. Google Material Design Farben
+		6.1 Rot
+		6.2 Pink
+		6.3 Lila
+		6.4 Dunkles Lila
+		6.5 Indigo
+		6.6 Blau
+		6.7 Hellblau
+		6.8 Cyan
+		6.9 Teal
+		6.10 Gruen
+		6.11 Hell Gruen
+		6.12 Lime
+		6.13 Gelb
+		6.14 Amber
+		6.15 Organge
+		6.16 Dunkles Organge
+		6.17 Braun
+		6.18 Grau
+		6.19 Blaugrau
+		
+	7. Schatten
+	
+	8. Mediaquerys
 
-/* Schrift */
-@schrift-headline		: "Quicksand";					/* <- Schriftfamilie für Ueberschriften */
-@schrift-content		: "Nunito";						/* <- Schriftfamilie für Content */
-@schrift-headline-family: @schrift-headline, regular;
-@schrift-content-family	: @schrift-content, regular;
-@font-size				: 15px; 						/* <- Standard Schriftgroeße */
-@small					: 0.8; 							/* <- Schriftgroeße x 0.7 / 1.1 / 1.3 */
-@medium					: 1.1;
-@large					: 1.2; 
-@thin					: 400;  						/* <- Schriftgewicht */
-@normal					: 500;
-@bold					: 700;
-@schrift-linie			: 1.4; 							/* <- Linienabstand zwischen den Zeilen */
+*/
 
-/* Schriftgröße Klein in Normal, thin und fett */
-@font-size-small-normal	: @normal ceil((@font-size * @small)) e('/') @schrift-linie @schrift-content-family;
-@font-size-small-thin	: @thin ceil((@font-size * @small)) e('/') @schrift-linie @schrift-content-family;
-@font-size-small-bold	: @bold	ceil((@font-size * @small)) e('/') @schrift-linie @schrift-content-family;  
+/*==============================================================================*/
+/* 	-	Farbpalette für Corporate Design											*/	
+/*==============================================================================*/
+@farbe-1						: #075807;
+@farbe-2						: #097609;
+@farbe-3						: #70AF1A;
+@farbe-4						: #B9D40B;
+@farbe-5						: #E5EB0B;
 
-/* Schriftgröße Standart in Normal, thin und fett */
-@font-size-base-normal	: @normal @font-size e('/') @schrift-linie @schrift-content-family;
-@font-size-base-thin	: @thin @font-size e('/') @schrift-linie @schrift-content-family;
-@font-size-base-bold	: @bold	@font-size e('/') @schrift-linie @schrift-content-family;
 
-/* Schriftgröße Mittel in Normal, thin und fett */
-@font-size-medium-normal: @normal ceil((@font-size * @medium)) e('/') @schrift-linie @schrift-content-family;
-@font-size-medium-thin	: @thin ceil((@font-size * @medium)) e('/') @schrift-linie @schrift-content-family;
-@font-size-medium-bold	: @bold	ceil((@font-size * @medium)) e('/') @schrift-linie @schrift-content-family;
+/*==============================================================================*/
+/* 	-	Rahmen																	*/	
+/*==============================================================================*/
+@border-color					: #555;
+@border							: 1px solid @border-color;
 
-/* Schriftgröße Groß in Normal, thin und fett */
-@font-size-large-normal	: @normal ceil((@font-size * @large)) e('/') @schrift-linie @schrift-content-family;
-@font-size-large-thin	: @thin ceil((@font-size * @large)) e('/') @schrift-linie @schrift-content-family;
-@font-size-large-bold	: @bold	ceil((@font-size * @large)) e('/') @schrift-linie @schrift-content-family;
+/*==============================================================================*/
+/* 	-	Schrift																	*/	
+/*==============================================================================*/
+@schrift-headline 				: "Quicksand";						/* Ueberschriften */
+@schrift-content 				: "Nunito";							/* Content */
+@schrift-headline-family 		: @schrift-headline, regular;
+@schrift-content-family 		: @schrift-content, regular;
+@font-size 						: 15px; 							/* Standard Schriftgroeße */
+@small 							: 0.8; 								/* Schriftgroeße x 0.7 / 1.1 / 1.3 */
+@medium 						: 1.1;
+@large 							: 1.2; 
+@thin 							: 400; 								/* Schriftgewicht */
+@normal 						: 500;
+@bold 							: 700;
+@schrift-linie					: 1.4; 
 
-/* Schwarz Transparente Farbe  */
-@schwarz-transparent-05	: rgba(0,0,0,.05);
-@schwarz-transparent-10	: rgba(0,0,0,.10);
-@schwarz-transparent-15	: rgba(0,0,0,.15);
-@schwarz-transparent-20	: rgba(0,0,0,.20);
-@schwarz-transparent-25	: rgba(0,0,0,.25);
-@schwarz-transparent-30	: rgba(0,0,0,.30);
-@schwarz-transparent-35	: rgba(0,0,0,.35);
-@schwarz-transparent-40	: rgba(0,0,0,.40);
-@schwarz-transparent-45	: rgba(0,0,0,.45);
-@schwarz-transparent-50	: rgba(0,0,0,.50);
-@schwarz-transparent-55	: rgba(0,0,0,.55);
-@schwarz-transparent-60	: rgba(0,0,0,.60);
-@schwarz-transparent-65	: rgba(0,0,0,.65);
-@schwarz-transparent-70	: rgba(0,0,0,.70);
-@schwarz-transparent-75	: rgba(0,0,0,.75);
-@schwarz-transparent-80	: rgba(0,0,0,.80);
-@schwarz-transparent-85	: rgba(0,0,0,.85);
-@schwarz-transparent-90	: rgba(0,0,0,.90);
-@schwarz-transparent-95	: rgba(0,0,0,.95);
+@font-size-small-normal			: @normal ceil((@font-size * @small)) e('/') @schrift-linie @schrift-content-family; 	/* Schriftgröße Klein  */
+@font-size-small-thin			: @thin ceil((@font-size * @small)) e('/') @schrift-linie @schrift-content-family;
+@font-size-small-bold			: @bold	ceil((@font-size * @small)) e('/') @schrift-linie @schrift-content-family;  
 
-/* Weiße Transparente Farbe  */
-@weiss-transparent-05	: fade(#FFF, 5%);
-@weiss-transparent-10	: fade(#FFF, 10%);
-@weiss-transparent-15	: fade(#FFF, 15%);
-@weiss-transparent-20	: fade(#FFF, 20%);
-@weiss-transparent-25	: fade(#FFF, 25%);
-@weiss-transparent-30	: fade(#FFF, 30%);
-@weiss-transparent-35	: fade(#FFF, 35%);
-@weiss-transparent-40	: fade(#FFF, 40%);
-@weiss-transparent-45	: fade(#FFF, 45%);
-@weiss-transparent-50	: fade(#FFF, 50%);
-@weiss-transparent-55	: fade(#FFF, 55%);
-@weiss-transparent-60	: fade(#FFF, 60%);
-@weiss-transparent-65	: fade(#FFF, 65%);
-@weiss-transparent-70	: fade(#FFF, 70%);
-@weiss-transparent-75	: fade(#FFF, 75%);
-@weiss-transparent-80	: fade(#FFF, 80%);
-@weiss-transparent-85	: fade(#FFF, 85%);
-@weiss-transparent-90	: fade(#FFF, 90%);
-@weiss-transparent-95	: fade(#FFF, 95%);
+@font-size-base-normal			: @normal @font-size e('/') @schrift-linie @schrift-content-family; 					/* Schriftgröße Standart */
+@font-size-base-thin			: @thin @font-size e('/') @schrift-linie @schrift-content-family;
+@font-size-base-bold			: @bold	@font-size e('/') @schrift-linie @schrift-content-family;
 
-/* Farbe-1 Transparente Farbe  */
-@farbe-1-transparent-05	: fade(@farbe-1, 5%);
-@farbe-1-transparent-10	: fade(@farbe-1, 10%);
-@farbe-1-transparent-15	: fade(@farbe-1, 15%);
-@farbe-1-transparent-20	: fade(@farbe-1, 20%);
-@farbe-1-transparent-25	: fade(@farbe-1, 25%);
-@farbe-1-transparent-30	: fade(@farbe-1, 30%);
-@farbe-1-transparent-35	: fade(@farbe-1, 35%);
-@farbe-1-transparent-40	: fade(@farbe-1, 40%);
-@farbe-1-transparent-45	: fade(@farbe-1, 45%);
-@farbe-1-transparent-50	: fade(@farbe-1, 50%);
-@farbe-1-transparent-55	: fade(@farbe-1, 55%);
-@farbe-1-transparent-60	: fade(@farbe-1, 60%);
-@farbe-1-transparent-65	: fade(@farbe-1, 65%);
-@farbe-1-transparent-70	: fade(@farbe-1, 70%);
-@farbe-1-transparent-75	: fade(@farbe-1, 75%);
-@farbe-1-transparent-80	: fade(@farbe-1, 80%);
-@farbe-1-transparent-85	: fade(@farbe-1, 85%);
-@farbe-1-transparent-90	: fade(@farbe-1, 90%);
-@farbe-1-transparent-95	: fade(@farbe-1, 95%);
+@font-size-medium-normal		: @normal ceil((@font-size * @medium)) e('/') @schrift-linie @schrift-content-family;	/* Schriftgröße Mittel */
+@font-size-medium-thin			: @thin ceil((@font-size * @medium)) e('/') @schrift-linie @schrift-content-family;
+@font-size-medium-bold			: @bold	ceil((@font-size * @medium)) e('/') @schrift-linie @schrift-content-family;
 
-/* Farbverlauf von @farbe-1 (05-50% heller, 05-50% dunkler) */
-@farbe-1-heller-05		: lighten(@farbe-1,5%);
-@farbe-1-heller-10		: lighten(@farbe-1,10%);
-@farbe-1-heller-15		: lighten(@farbe-1,15%);
-@farbe-1-heller-20		: lighten(@farbe-1,20%);
-@farbe-1-heller-25		: lighten(@farbe-1,25%);
-@farbe-1-heller-30		: lighten(@farbe-1,30%);
-@farbe-1-heller-35		: lighten(@farbe-1,35%);
-@farbe-1-heller-40		: lighten(@farbe-1,40%);
-@farbe-1-heller-45		: lighten(@farbe-1,45%);
-@farbe-1-heller-50		: lighten(@farbe-1,50%);
-@farbe-1-dunkler-05		: darken(@farbe-1,5%);
-@farbe-1-dunkler-10		: darken(@farbe-1,10%);
-@farbe-1-dunkler-15		: darken(@farbe-1,15%);
-@farbe-1-dunkler-20		: darken(@farbe-1,20%);
-@farbe-1-dunkler-25		: darken(@farbe-1,25%);
-@farbe-1-dunkler-30		: darken(@farbe-1,30%);
-@farbe-1-dunkler-35		: darken(@farbe-1,35%);
-@farbe-1-dunkler-40		: darken(@farbe-1,40%);
-@farbe-1-dunkler-45		: darken(@farbe-1,45%);
-@farbe-1-dunkler-50		: darken(@farbe-1,50%);
+@font-size-large-normal			: @normal ceil((@font-size * @large)) e('/') @schrift-linie @schrift-content-family;	/* Schriftgröße Groß */
+@font-size-large-thin			: @thin ceil((@font-size * @large)) e('/') @schrift-linie @schrift-content-family;
+@font-size-large-bold			: @bold	ceil((@font-size * @large)) e('/') @schrift-linie @schrift-content-family;
 
-/* Farbe-2 Transparente Farbe  */
-@farbe-2-transparent-05	: fade(@farbe-2, 5%);
-@farbe-2-transparent-10	: fade(@farbe-2, 10%);
-@farbe-2-transparent-15	: fade(@farbe-2, 15%);
-@farbe-2-transparent-20	: fade(@farbe-2, 15%);
-@farbe-2-transparent-25	: fade(@farbe-2, 20%);
-@farbe-2-transparent-30	: fade(@farbe-2, 25%);
-@farbe-2-transparent-35	: fade(@farbe-2, 30%);
-@farbe-2-transparent-40	: fade(@farbe-2, 35%);
-@farbe-2-transparent-45	: fade(@farbe-2, 40%);
-@farbe-2-transparent-50	: fade(@farbe-2, 45%);
-@farbe-2-transparent-55	: fade(@farbe-2, 50%);
-@farbe-2-transparent-60	: fade(@farbe-2, 55%);
-@farbe-2-transparent-65	: fade(@farbe-2, 60%);
-@farbe-2-transparent-70	: fade(@farbe-2, 65%);
-@farbe-2-transparent-75	: fade(@farbe-2, 70%);
-@farbe-2-transparent-80	: fade(@farbe-2, 75%);
-@farbe-2-transparent-85	: fade(@farbe-2, 80%);
-@farbe-2-transparent-90	: fade(@farbe-2, 85%);
-@farbe-2-transparent-95	: fade(@farbe-2, 90%);
+/*==============================================================================*/
+/* 	-	Schwarz / Weiß															*/	
+/*==============================================================================*/
+@schwarz-transparent-05			: rgba(0,0,0,.05);		/* Schwarz */	
+@schwarz-transparent-10			: rgba(0,0,0,.10);
+@schwarz-transparent-15			: rgba(0,0,0,.15);
+@schwarz-transparent-20			: rgba(0,0,0,.20);
+@schwarz-transparent-25			: rgba(0,0,0,.25);
+@schwarz-transparent-30			: rgba(0,0,0,.30);
+@schwarz-transparent-35			: rgba(0,0,0,.35);
+@schwarz-transparent-40			: rgba(0,0,0,.40);
+@schwarz-transparent-45			: rgba(0,0,0,.45);
+@schwarz-transparent-50			: rgba(0,0,0,.50);
+@schwarz-transparent-55			: rgba(0,0,0,.55);
+@schwarz-transparent-60			: rgba(0,0,0,.60);
+@schwarz-transparent-65			: rgba(0,0,0,.65);
+@schwarz-transparent-70			: rgba(0,0,0,.70);
+@schwarz-transparent-75			: rgba(0,0,0,.75);
+@schwarz-transparent-80			: rgba(0,0,0,.80);
+@schwarz-transparent-85			: rgba(0,0,0,.85);
+@schwarz-transparent-90			: rgba(0,0,0,.90);
+@schwarz-transparent-95			: rgba(0,0,0,.95);
 
-/* Farbverlauf von @farbe-2 (05-50% heller, 05-50% dunkler) */
-@farbe-2-heller-05		: lighten(@farbe-2,5%);
-@farbe-2-heller-10		: lighten(@farbe-2,10%);
-@farbe-2-heller-15		: lighten(@farbe-2,15%);
-@farbe-2-heller-20		: lighten(@farbe-2,20%);
-@farbe-2-heller-25		: lighten(@farbe-2,25%);
-@farbe-2-heller-30		: lighten(@farbe-2,30%);
-@farbe-2-heller-35		: lighten(@farbe-2,35%);
-@farbe-2-heller-40		: lighten(@farbe-2,40%);
-@farbe-2-heller-45		: lighten(@farbe-2,45%);
-@farbe-2-heller-50		: lighten(@farbe-2,50%);
-@farbe-2-dunkler-05		: darken(@farbe-2,5%);
-@farbe-2-dunkler-10		: darken(@farbe-2,10%);
-@farbe-2-dunkler-15		: darken(@farbe-2,15%);
-@farbe-2-dunkler-20		: darken(@farbe-2,20%);
-@farbe-2-dunkler-25		: darken(@farbe-2,25%);
-@farbe-2-dunkler-30		: darken(@farbe-2,30%);
-@farbe-2-dunkler-35		: darken(@farbe-2,35%);
-@farbe-2-dunkler-40		: darken(@farbe-2,40%);
-@farbe-2-dunkler-45		: darken(@farbe-2,45%);
-@farbe-2-dunkler-50		: darken(@farbe-2,50%);
+@weiss-transparent-05			: fade(#FFF, 5%);		/* Weiss */
+@weiss-transparent-10			: fade(#FFF, 10%);
+@weiss-transparent-15			: fade(#FFF, 15%);
+@weiss-transparent-20			: fade(#FFF, 20%);
+@weiss-transparent-25			: fade(#FFF, 25%);
+@weiss-transparent-30			: fade(#FFF, 30%);
+@weiss-transparent-35			: fade(#FFF, 35%);
+@weiss-transparent-40			: fade(#FFF, 40%);
+@weiss-transparent-45			: fade(#FFF, 45%);
+@weiss-transparent-50			: fade(#FFF, 50%);
+@weiss-transparent-55			: fade(#FFF, 55%);
+@weiss-transparent-60			: fade(#FFF, 60%);
+@weiss-transparent-65			: fade(#FFF, 65%);
+@weiss-transparent-70			: fade(#FFF, 70%);
+@weiss-transparent-75			: fade(#FFF, 75%);
+@weiss-transparent-80			: fade(#FFF, 80%);
+@weiss-transparent-85			: fade(#FFF, 85%);
+@weiss-transparent-90			: fade(#FFF, 90%);
+@weiss-transparent-95			: fade(#FFF, 95%);
 
-/* Farbe-3 Transparente Farbe  */
-@farbe-3-transparent-05	: fade(@farbe-3, 5%);
-@farbe-3-transparent-10	: fade(@farbe-3, 10%);
-@farbe-3-transparent-15	: fade(@farbe-3, 15%);
-@farbe-3-transparent-20	: fade(@farbe-3, 20%);
-@farbe-3-transparent-25	: fade(@farbe-3, 25%);
-@farbe-3-transparent-30	: fade(@farbe-3, 30%);
-@farbe-3-transparent-35	: fade(@farbe-3, 35%);
-@farbe-3-transparent-40	: fade(@farbe-3, 40%);
-@farbe-3-transparent-45	: fade(@farbe-3, 45%);
-@farbe-3-transparent-50	: fade(@farbe-3, 50%);
-@farbe-3-transparent-55	: fade(@farbe-3, 55%);
-@farbe-3-transparent-60	: fade(@farbe-3, 60%);
-@farbe-3-transparent-65	: fade(@farbe-3, 65%);
-@farbe-3-transparent-70	: fade(@farbe-3, 70%);
-@farbe-3-transparent-75	: fade(@farbe-3, 75%);
-@farbe-3-transparent-80	: fade(@farbe-3, 80%);
-@farbe-3-transparent-85	: fade(@farbe-3, 85%);
-@farbe-3-transparent-90	: fade(@farbe-3, 90%);
-@farbe-3-transparent-95	: fade(@farbe-3, 95%);
+/*==============================================================================*/
+/* 	-	Corporate Design Farben													*/	
+/*==============================================================================*/
 
-/* Farbverlauf von @farbe-3 (05-50% heller, 05-50% dunkler) */
-@farbe-3-heller-05		: lighten(@farbe-3,5%);
-@farbe-3-heller-10		: lighten(@farbe-3,10%);
-@farbe-3-heller-15		: lighten(@farbe-3,15%);
-@farbe-3-heller-20		: lighten(@farbe-3,20%);
-@farbe-3-heller-25		: lighten(@farbe-3,25%);
-@farbe-3-heller-30		: lighten(@farbe-3,30%);
-@farbe-3-heller-35		: lighten(@farbe-3,35%);
-@farbe-3-heller-40		: lighten(@farbe-3,40%);
-@farbe-3-heller-45		: lighten(@farbe-3,45%);
-@farbe-3-heller-50		: lighten(@farbe-3,50%);
-@farbe-3-dunkler-05		: darken(@farbe-3,5%);
-@farbe-3-dunkler-10		: darken(@farbe-3,10%);
-@farbe-3-dunkler-15		: darken(@farbe-3,15%);
-@farbe-3-dunkler-20		: darken(@farbe-3,20%);
-@farbe-3-dunkler-25		: darken(@farbe-3,25%);
-@farbe-3-dunkler-30		: darken(@farbe-3,30%);
-@farbe-3-dunkler-35		: darken(@farbe-3,35%);
-@farbe-3-dunkler-40		: darken(@farbe-3,40%);
-@farbe-3-dunkler-45		: darken(@farbe-3,45%);
-@farbe-3-dunkler-50		: darken(@farbe-3,50%);
+@farbe-1-transparent-05			: fade(@farbe-1, 5%); 		/* Farbe-1 Transparente Farbe  */
+@farbe-1-transparent-10			: fade(@farbe-1, 10%);
+@farbe-1-transparent-15			: fade(@farbe-1, 15%);
+@farbe-1-transparent-20			: fade(@farbe-1, 20%);
+@farbe-1-transparent-25			: fade(@farbe-1, 25%);
+@farbe-1-transparent-30			: fade(@farbe-1, 30%);
+@farbe-1-transparent-35			: fade(@farbe-1, 35%);
+@farbe-1-transparent-40			: fade(@farbe-1, 40%);
+@farbe-1-transparent-45			: fade(@farbe-1, 45%);
+@farbe-1-transparent-50			: fade(@farbe-1, 50%);
+@farbe-1-transparent-55			: fade(@farbe-1, 55%);
+@farbe-1-transparent-60			: fade(@farbe-1, 60%);
+@farbe-1-transparent-65			: fade(@farbe-1, 65%);
+@farbe-1-transparent-70			: fade(@farbe-1, 70%);
+@farbe-1-transparent-75			: fade(@farbe-1, 75%);
+@farbe-1-transparent-80			: fade(@farbe-1, 80%);
+@farbe-1-transparent-85			: fade(@farbe-1, 85%);
+@farbe-1-transparent-90			: fade(@farbe-1, 90%);
+@farbe-1-transparent-95			: fade(@farbe-1, 95%);
+@farbe-1-heller-05				: lighten(@farbe-1,5%);		/* Farbverlauf von @farbe-1 */
+@farbe-1-heller-10				: lighten(@farbe-1,10%);
+@farbe-1-heller-15				: lighten(@farbe-1,15%);
+@farbe-1-heller-20				: lighten(@farbe-1,20%);
+@farbe-1-heller-25				: lighten(@farbe-1,25%);
+@farbe-1-heller-30				: lighten(@farbe-1,30%);
+@farbe-1-heller-35				: lighten(@farbe-1,35%);
+@farbe-1-heller-40				: lighten(@farbe-1,40%);
+@farbe-1-heller-45				: lighten(@farbe-1,45%);
+@farbe-1-heller-50				: lighten(@farbe-1,50%);
+@farbe-1-dunkler-05				: darken(@farbe-1,5%);
+@farbe-1-dunkler-10				: darken(@farbe-1,10%);
+@farbe-1-dunkler-15				: darken(@farbe-1,15%);
+@farbe-1-dunkler-20				: darken(@farbe-1,20%);
+@farbe-1-dunkler-25				: darken(@farbe-1,25%);
+@farbe-1-dunkler-30				: darken(@farbe-1,30%);
+@farbe-1-dunkler-35				: darken(@farbe-1,35%);
+@farbe-1-dunkler-40				: darken(@farbe-1,40%);
+@farbe-1-dunkler-45				: darken(@farbe-1,45%);
+@farbe-1-dunkler-50				: darken(@farbe-1,50%);
 
-/* farbe-4 Transparente Farbe  */
-@farbe-4-transparent-05	: fade(@farbe-4, 5%);
-@farbe-4-transparent-10	: fade(@farbe-4, 10%);
-@farbe-4-transparent-15	: fade(@farbe-4, 15%);
-@farbe-4-transparent-20	: fade(@farbe-4, 20%);
-@farbe-4-transparent-25	: fade(@farbe-4, 25%);
-@farbe-4-transparent-30	: fade(@farbe-4, 30%);
-@farbe-4-transparent-35	: fade(@farbe-4, 35%);
-@farbe-4-transparent-40	: fade(@farbe-4, 40%);
-@farbe-4-transparent-45	: fade(@farbe-4, 45%);
-@farbe-4-transparent-50	: fade(@farbe-4, 50%);
-@farbe-4-transparent-55	: fade(@farbe-4, 55%);
-@farbe-4-transparent-60	: fade(@farbe-4, 60%);
-@farbe-4-transparent-65	: fade(@farbe-4, 65%);
-@farbe-4-transparent-70	: fade(@farbe-4, 70%);
-@farbe-4-transparent-75	: fade(@farbe-4, 75%);
-@farbe-4-transparent-80	: fade(@farbe-4, 80%);
-@farbe-4-transparent-85	: fade(@farbe-4, 85%);
-@farbe-4-transparent-90	: fade(@farbe-4, 90%);
-@farbe-4-transparent-95	: fade(@farbe-4, 95%);
+@farbe-2-transparent-05			: fade(@farbe-2, 5%);		/* Farbe-2 Transparente Farbe  */
+@farbe-2-transparent-10			: fade(@farbe-2, 10%);
+@farbe-2-transparent-15			: fade(@farbe-2, 15%);
+@farbe-2-transparent-20			: fade(@farbe-2, 15%);
+@farbe-2-transparent-25			: fade(@farbe-2, 20%);
+@farbe-2-transparent-30			: fade(@farbe-2, 25%);
+@farbe-2-transparent-35			: fade(@farbe-2, 30%);
+@farbe-2-transparent-40			: fade(@farbe-2, 35%);
+@farbe-2-transparent-45			: fade(@farbe-2, 40%);
+@farbe-2-transparent-50			: fade(@farbe-2, 45%);
+@farbe-2-transparent-55			: fade(@farbe-2, 50%);
+@farbe-2-transparent-60			: fade(@farbe-2, 55%);
+@farbe-2-transparent-65			: fade(@farbe-2, 60%);
+@farbe-2-transparent-70			: fade(@farbe-2, 65%);
+@farbe-2-transparent-75			: fade(@farbe-2, 70%);
+@farbe-2-transparent-80			: fade(@farbe-2, 75%);
+@farbe-2-transparent-85			: fade(@farbe-2, 80%);
+@farbe-2-transparent-90			: fade(@farbe-2, 85%);
+@farbe-2-transparent-95			: fade(@farbe-2, 90%);
+@farbe-2-heller-05				: lighten(@farbe-2,5%);		/* Farbverlauf von @farbe-2 */
+@farbe-2-heller-10				: lighten(@farbe-2,10%);
+@farbe-2-heller-15				: lighten(@farbe-2,15%);
+@farbe-2-heller-20				: lighten(@farbe-2,20%);
+@farbe-2-heller-25				: lighten(@farbe-2,25%);
+@farbe-2-heller-30				: lighten(@farbe-2,30%);
+@farbe-2-heller-35				: lighten(@farbe-2,35%);
+@farbe-2-heller-40				: lighten(@farbe-2,40%);
+@farbe-2-heller-45				: lighten(@farbe-2,45%);
+@farbe-2-heller-50				: lighten(@farbe-2,50%);
+@farbe-2-dunkler-05				: darken(@farbe-2,5%);
+@farbe-2-dunkler-10				: darken(@farbe-2,10%);
+@farbe-2-dunkler-15				: darken(@farbe-2,15%);
+@farbe-2-dunkler-20				: darken(@farbe-2,20%);
+@farbe-2-dunkler-25				: darken(@farbe-2,25%);
+@farbe-2-dunkler-30				: darken(@farbe-2,30%);
+@farbe-2-dunkler-35				: darken(@farbe-2,35%);
+@farbe-2-dunkler-40				: darken(@farbe-2,40%);
+@farbe-2-dunkler-45				: darken(@farbe-2,45%);
+@farbe-2-dunkler-50				: darken(@farbe-2,50%);
 
-/* Farbverlauf von @farbe-4 (05-50% heller, 05-50% dunkler) */
-@farbe-4-heller-05		: lighten(@farbe-4,5%);
-@farbe-4-heller-10		: lighten(@farbe-4,10%);
-@farbe-4-heller-15		: lighten(@farbe-4,15%);
-@farbe-4-heller-20		: lighten(@farbe-4,20%);
-@farbe-4-heller-25		: lighten(@farbe-4,25%);
-@farbe-4-heller-30		: lighten(@farbe-4,30%);
-@farbe-4-heller-35		: lighten(@farbe-4,35%);
-@farbe-4-heller-40		: lighten(@farbe-4,40%);
-@farbe-4-heller-45		: lighten(@farbe-4,45%);
-@farbe-4-heller-50		: lighten(@farbe-4,50%);
-@farbe-4-dunkler-05		: darken(@farbe-4,5%);
-@farbe-4-dunkler-10		: darken(@farbe-4,10%);
-@farbe-4-dunkler-15		: darken(@farbe-4,15%);
-@farbe-4-dunkler-20		: darken(@farbe-4,20%);
-@farbe-4-dunkler-25		: darken(@farbe-4,25%);
-@farbe-4-dunkler-30		: darken(@farbe-4,30%);
-@farbe-4-dunkler-35		: darken(@farbe-4,35%);
-@farbe-4-dunkler-40		: darken(@farbe-4,40%);
-@farbe-4-dunkler-45		: darken(@farbe-4,45%);
-@farbe-4-dunkler-50		: darken(@farbe-4,50%);
+@farbe-3-transparent-05			: fade(@farbe-3, 5%);		/* Farbe-3 Transparente Farbe  */
+@farbe-3-transparent-10			: fade(@farbe-3, 10%);
+@farbe-3-transparent-15			: fade(@farbe-3, 15%);
+@farbe-3-transparent-20			: fade(@farbe-3, 20%);
+@farbe-3-transparent-25			: fade(@farbe-3, 25%);
+@farbe-3-transparent-30			: fade(@farbe-3, 30%);
+@farbe-3-transparent-35			: fade(@farbe-3, 35%);
+@farbe-3-transparent-40			: fade(@farbe-3, 40%);
+@farbe-3-transparent-45			: fade(@farbe-3, 45%);
+@farbe-3-transparent-50			: fade(@farbe-3, 50%);
+@farbe-3-transparent-55			: fade(@farbe-3, 55%);
+@farbe-3-transparent-60			: fade(@farbe-3, 60%);
+@farbe-3-transparent-65			: fade(@farbe-3, 65%);
+@farbe-3-transparent-70			: fade(@farbe-3, 70%);
+@farbe-3-transparent-75			: fade(@farbe-3, 75%);
+@farbe-3-transparent-80			: fade(@farbe-3, 80%);
+@farbe-3-transparent-85			: fade(@farbe-3, 85%);
+@farbe-3-transparent-90			: fade(@farbe-3, 90%);
+@farbe-3-transparent-95			: fade(@farbe-3, 95%);
+@farbe-3-heller-05				: lighten(@farbe-3,5%);		/* Farbverlauf von @farbe-3 */
+@farbe-3-heller-10				: lighten(@farbe-3,10%);
+@farbe-3-heller-15				: lighten(@farbe-3,15%);
+@farbe-3-heller-20				: lighten(@farbe-3,20%);
+@farbe-3-heller-25				: lighten(@farbe-3,25%);
+@farbe-3-heller-30				: lighten(@farbe-3,30%);
+@farbe-3-heller-35				: lighten(@farbe-3,35%);
+@farbe-3-heller-40				: lighten(@farbe-3,40%);
+@farbe-3-heller-45				: lighten(@farbe-3,45%);
+@farbe-3-heller-50				: lighten(@farbe-3,50%);
+@farbe-3-dunkler-05				: darken(@farbe-3,5%);
+@farbe-3-dunkler-10				: darken(@farbe-3,10%);
+@farbe-3-dunkler-15				: darken(@farbe-3,15%);
+@farbe-3-dunkler-20				: darken(@farbe-3,20%);
+@farbe-3-dunkler-25				: darken(@farbe-3,25%);
+@farbe-3-dunkler-30				: darken(@farbe-3,30%);
+@farbe-3-dunkler-35				: darken(@farbe-3,35%);
+@farbe-3-dunkler-40				: darken(@farbe-3,40%);
+@farbe-3-dunkler-45				: darken(@farbe-3,45%);
+@farbe-3-dunkler-50				: darken(@farbe-3,50%);
 
-/* farbe-5 Transparente Farbe  */
-@farbe-5-transparent-05	: fade(@farbe-5, 5%);
-@farbe-5-transparent-10	: fade(@farbe-5, 10%);
-@farbe-5-transparent-15	: fade(@farbe-5, 15%);
-@farbe-5-transparent-20	: fade(@farbe-5, 20%);
-@farbe-5-transparent-25	: fade(@farbe-5, 25%);
-@farbe-5-transparent-30	: fade(@farbe-5, 30%);
-@farbe-5-transparent-35	: fade(@farbe-5, 35%);
-@farbe-5-transparent-40	: fade(@farbe-5, 40%);
-@farbe-5-transparent-45	: fade(@farbe-5, 45%);
-@farbe-5-transparent-50	: fade(@farbe-5, 50%);
-@farbe-5-transparent-55	: fade(@farbe-5, 55%);
-@farbe-5-transparent-60	: fade(@farbe-5, 60%);
-@farbe-5-transparent-65	: fade(@farbe-5, 65%);
-@farbe-5-transparent-70	: fade(@farbe-5, 70%);
-@farbe-5-transparent-75	: fade(@farbe-5, 75%);
-@farbe-5-transparent-80	: fade(@farbe-5, 80%);
-@farbe-5-transparent-85	: fade(@farbe-5, 85%);
-@farbe-5-transparent-90	: fade(@farbe-5, 90%);
-@farbe-5-transparent-95	: fade(@farbe-5, 95%);
+@farbe-4-transparent-05			: fade(@farbe-4, 5%);		/* farbe-4 Transparente Farbe  */
+@farbe-4-transparent-10			: fade(@farbe-4, 10%);
+@farbe-4-transparent-15			: fade(@farbe-4, 15%);
+@farbe-4-transparent-20			: fade(@farbe-4, 20%);
+@farbe-4-transparent-25			: fade(@farbe-4, 25%);
+@farbe-4-transparent-30			: fade(@farbe-4, 30%);
+@farbe-4-transparent-35			: fade(@farbe-4, 35%);
+@farbe-4-transparent-40			: fade(@farbe-4, 40%);
+@farbe-4-transparent-45			: fade(@farbe-4, 45%);
+@farbe-4-transparent-50			: fade(@farbe-4, 50%);
+@farbe-4-transparent-55			: fade(@farbe-4, 55%);
+@farbe-4-transparent-60			: fade(@farbe-4, 60%);
+@farbe-4-transparent-65			: fade(@farbe-4, 65%);
+@farbe-4-transparent-70			: fade(@farbe-4, 70%);
+@farbe-4-transparent-75			: fade(@farbe-4, 75%);
+@farbe-4-transparent-80			: fade(@farbe-4, 80%);
+@farbe-4-transparent-85			: fade(@farbe-4, 85%);
+@farbe-4-transparent-90			: fade(@farbe-4, 90%);
+@farbe-4-transparent-95			: fade(@farbe-4, 95%);
+@farbe-4-heller-05				: lighten(@farbe-4,5%);		/* Farbverlauf von @farbe-4 */
+@farbe-4-heller-10				: lighten(@farbe-4,10%);
+@farbe-4-heller-15				: lighten(@farbe-4,15%);
+@farbe-4-heller-20				: lighten(@farbe-4,20%);
+@farbe-4-heller-25				: lighten(@farbe-4,25%);
+@farbe-4-heller-30				: lighten(@farbe-4,30%);
+@farbe-4-heller-35				: lighten(@farbe-4,35%);
+@farbe-4-heller-40				: lighten(@farbe-4,40%);
+@farbe-4-heller-45				: lighten(@farbe-4,45%);
+@farbe-4-heller-50				: lighten(@farbe-4,50%);
+@farbe-4-dunkler-05				: darken(@farbe-4,5%);
+@farbe-4-dunkler-10				: darken(@farbe-4,10%);
+@farbe-4-dunkler-15				: darken(@farbe-4,15%);
+@farbe-4-dunkler-20				: darken(@farbe-4,20%);
+@farbe-4-dunkler-25				: darken(@farbe-4,25%);
+@farbe-4-dunkler-30				: darken(@farbe-4,30%);
+@farbe-4-dunkler-35				: darken(@farbe-4,35%);
+@farbe-4-dunkler-40				: darken(@farbe-4,40%);
+@farbe-4-dunkler-45				: darken(@farbe-4,45%);
+@farbe-4-dunkler-50				: darken(@farbe-4,50%);
 
-/* Farbverlauf von @farbe-5 (05-50% heller, 05-50% dunkler) */
-@farbe-5-heller-05		: lighten(@farbe-5,5%);
-@farbe-5-heller-10		: lighten(@farbe-5,10%);
-@farbe-5-heller-15		: lighten(@farbe-5,15%);
-@farbe-5-heller-20		: lighten(@farbe-5,20%);
-@farbe-5-heller-25		: lighten(@farbe-5,25%);
-@farbe-5-heller-30		: lighten(@farbe-5,30%);
-@farbe-5-heller-35		: lighten(@farbe-5,35%);
-@farbe-5-heller-40		: lighten(@farbe-5,40%);
-@farbe-5-heller-45		: lighten(@farbe-5,45%);
-@farbe-5-heller-50		: lighten(@farbe-5,50%);
-@farbe-5-dunkler-05		: darken(@farbe-5,5%);
-@farbe-5-dunkler-10		: darken(@farbe-5,10%);
-@farbe-5-dunkler-15		: darken(@farbe-5,15%);
-@farbe-5-dunkler-20		: darken(@farbe-5,20%);
-@farbe-5-dunkler-25		: darken(@farbe-5,25%);
-@farbe-5-dunkler-30		: darken(@farbe-5,30%);
-@farbe-5-dunkler-35		: darken(@farbe-5,35%);
-@farbe-5-dunkler-40		: darken(@farbe-5,40%);
-@farbe-5-dunkler-45		: darken(@farbe-5,45%);
-@farbe-5-dunkler-50		: darken(@farbe-5,50%);
+@farbe-5-transparent-05			: fade(@farbe-5, 5%);		/* farbe-5 Transparente Farbe  */
+@farbe-5-transparent-10			: fade(@farbe-5, 10%);
+@farbe-5-transparent-15			: fade(@farbe-5, 15%);
+@farbe-5-transparent-20			: fade(@farbe-5, 20%);
+@farbe-5-transparent-25			: fade(@farbe-5, 25%);
+@farbe-5-transparent-30			: fade(@farbe-5, 30%);
+@farbe-5-transparent-35			: fade(@farbe-5, 35%);
+@farbe-5-transparent-40			: fade(@farbe-5, 40%);
+@farbe-5-transparent-45			: fade(@farbe-5, 45%);
+@farbe-5-transparent-50			: fade(@farbe-5, 50%);
+@farbe-5-transparent-55			: fade(@farbe-5, 55%);
+@farbe-5-transparent-60			: fade(@farbe-5, 60%);
+@farbe-5-transparent-65			: fade(@farbe-5, 65%);
+@farbe-5-transparent-70			: fade(@farbe-5, 70%);
+@farbe-5-transparent-75			: fade(@farbe-5, 75%);
+@farbe-5-transparent-80			: fade(@farbe-5, 80%);
+@farbe-5-transparent-85			: fade(@farbe-5, 85%);
+@farbe-5-transparent-90			: fade(@farbe-5, 90%);
+@farbe-5-transparent-95			: fade(@farbe-5, 95%);
+@farbe-5-heller-05				: lighten(@farbe-5,5%);		/* Farbverlauf von @farbe-5 */
+@farbe-5-heller-10				: lighten(@farbe-5,10%);
+@farbe-5-heller-15				: lighten(@farbe-5,15%);
+@farbe-5-heller-20				: lighten(@farbe-5,20%);
+@farbe-5-heller-25				: lighten(@farbe-5,25%);
+@farbe-5-heller-30				: lighten(@farbe-5,30%);
+@farbe-5-heller-35				: lighten(@farbe-5,35%);
+@farbe-5-heller-40				: lighten(@farbe-5,40%);
+@farbe-5-heller-45				: lighten(@farbe-5,45%);
+@farbe-5-heller-50				: lighten(@farbe-5,50%);
+@farbe-5-dunkler-05				: darken(@farbe-5,5%);
+@farbe-5-dunkler-10				: darken(@farbe-5,10%);
+@farbe-5-dunkler-15				: darken(@farbe-5,15%);
+@farbe-5-dunkler-20				: darken(@farbe-5,20%);
+@farbe-5-dunkler-25				: darken(@farbe-5,25%);
+@farbe-5-dunkler-30				: darken(@farbe-5,30%);
+@farbe-5-dunkler-35				: darken(@farbe-5,35%);
+@farbe-5-dunkler-40				: darken(@farbe-5,40%);
+@farbe-5-dunkler-45				: darken(@farbe-5,45%);
+@farbe-5-dunkler-50				: darken(@farbe-5,50%);
 
 /*==============================================================================*/
 /* 	-	Google Material-Design Farben											*/	
 /*==============================================================================*/
 
-/* Rot */
-@red-1					: #F44336;
-@red-2					: #FFEBEE;
-@red-3					: #FFCDD2;
-@red-4					: #ef9a9a;
-@red-5					: #e57373;
-@red-6					: #ef5350;
-@red-7					: #f44336;
-@red-8					: #e53935;
-@red-9					: #d32f2f;
-@red-10					: #c62828;
-@red-11					: #b71c1c;
+@red-1							: #F44336;		/* Rot */
+@red-2							: #FFEBEE;
+@red-3							: #FFCDD2;
+@red-4							: #ef9a9a;
+@red-5							: #e57373;
+@red-6							: #ef5350;
+@red-7							: #f44336;
+@red-8							: #e53935;
+@red-9							: #d32f2f;
+@red-10							: #c62828;
+@red-11							: #b71c1c;
 
-/* Pink */
-@pink-1					: #e91e63
-@pink-2					: #fce4ec;
-@pink-3					: #f8bbd0;
-@pink-4					: #f48fb1;
-@pink-5					: #f06292;
-@pink-6					: #ec407a;
-@pink-7					: #e91e63;
-@pink-8					: #d81b60;
-@pink-9					: #c2185b;
-@pink-10				: #ad1457;
-@pink-11				: #880e4f;
+@pink-1							: #e91e63 		/* Pink */
+@pink-2							: #fce4ec;
+@pink-3							: #f8bbd0;
+@pink-4							: #f48fb1;
+@pink-5							: #f06292;
+@pink-6							: #ec407a;
+@pink-7							: #e91e63;
+@pink-8							: #d81b60;
+@pink-9							: #c2185b;
+@pink-10						: #ad1457;
+@pink-11						: #880e4f;
 
-/* Lila */
-@purple-1				: #9C27B0;
-@purple-2				: #F3E5F5;
-@purple-3				: #E1BEE7;
-@purple-4				: #CE93D8;
-@purple-5				: #BA68C8;
-@purple-6				: #AB47BC;
-@purple-7				: #9C27B0;
-@purple-8				: #8E24AA;
-@purple-9				: #7B1FA2;
-@purple-10				: #6A1B9A;
-@purple-11				: #4A148C;
+@purple-1						: #9C27B0;		/* Lila */
+@purple-2						: #F3E5F5;
+@purple-3						: #E1BEE7;
+@purple-4						: #CE93D8;
+@purple-5						: #BA68C8;
+@purple-6						: #AB47BC;
+@purple-7						: #9C27B0;
+@purple-8						: #8E24AA;
+@purple-9						: #7B1FA2;
+@purple-10						: #6A1B9A;
+@purple-11						: #4A148C;
 
-/* Dunkles Lila */
-@deep-purple-1			: #673AB7;
-@deep-purple-2			: #EDE7F6;
-@deep-purple-3			: #D1C4E9;
-@deep-purple-4			: #B39DDB;
-@deep-purple-5			: #9575CD;
-@deep-purple-6			: #7E57C2;
-@deep-purple-7			: #673AB7;
-@deep-purple-8			: #5E35B1;
-@deep-purple-9			: #512DA8;
-@deep-purple-10			: #4527A0;
-@deep-purple-11			: #311B92;
+@deep-purple-1					: #673AB7;		/* Dunkles Lila */
+@deep-purple-2					: #EDE7F6;
+@deep-purple-3					: #D1C4E9;
+@deep-purple-4					: #B39DDB;
+@deep-purple-5					: #9575CD;
+@deep-purple-6					: #7E57C2;
+@deep-purple-7					: #673AB7;
+@deep-purple-8					: #5E35B1;
+@deep-purple-9					: #512DA8;
+@deep-purple-10					: #4527A0;
+@deep-purple-11					: #311B92;
 
-/* Indigo */
-@indigo-1				: #3F51B5;
-@indigo-2				: #E8EAF6;
-@indigo-3				: #C5CAE9;
-@indigo-4				: #9FA8DA;
-@indigo-5				: #7986CB;
-@indigo-6				: #5C6BC0;
-@indigo-7				: #3F51B5;
-@indigo-8				: #3949AB;
-@indigo-9				: #303F9F;
-@indigo-10				: #283593;
-@indigo-11				: #1A237E;
+@indigo-1						: #3F51B5;		/* Indigo */
+@indigo-2						: #E8EAF6;
+@indigo-3						: #C5CAE9;
+@indigo-4						: #9FA8DA;
+@indigo-5						: #7986CB;
+@indigo-6						: #5C6BC0;
+@indigo-7						: #3F51B5;
+@indigo-8						: #3949AB;
+@indigo-9						: #303F9F;
+@indigo-10						: #283593;
+@indigo-11						: #1A237E;
 
-/* Blau */
-@blue-1					: #2196F3;
-@blue-2					: #E3F2FD;
-@blue-3					: #BBDEFB;
-@blue-4					: #90CAF9;
-@blue-5					: #64B5F6;
-@blue-6					: #42A5F5;
-@blue-7					: #2196F3;
-@blue-8					: #1E88E5;
-@blue-9					: #1976D2;
-@blue-10				: #1565C0;
-@blue-11				: #0D47A1;
+@blue-1							: #2196F3;		/* Blau */
+@blue-2							: #E3F2FD;
+@blue-3							: #BBDEFB;
+@blue-4							: #90CAF9;
+@blue-5							: #64B5F6;
+@blue-6							: #42A5F5;
+@blue-7							: #2196F3;
+@blue-8							: #1E88E5;
+@blue-9							: #1976D2;
+@blue-10						: #1565C0;
+@blue-11						: #0D47A1;
 
-/* Hellblau */
-@light-blue-1			: #03A9F4;
-@light-blue-2			: #E1F5FE;
-@light-blue-3			: #B3E5FC;
-@light-blue-4			: #81D4FA;
-@light-blue-5			: #4FC3F7;
-@light-blue-6			: #29B6F6;
-@light-blue-7			: #03A9F4;
-@light-blue-8			: #039BE5;
-@light-blue-9			: #0288D1;
-@light-blue-10			: #0277BD;
-@light-blue-11			: #01579B;
+@light-blue-1					: #03A9F4;		/* Hellblau */
+@light-blue-2					: #E1F5FE;
+@light-blue-3					: #B3E5FC;
+@light-blue-4					: #81D4FA;
+@light-blue-5					: #4FC3F7;
+@light-blue-6					: #29B6F6;
+@light-blue-7					: #03A9F4;
+@light-blue-8					: #039BE5;
+@light-blue-9					: #0288D1;
+@light-blue-10					: #0277BD;
+@light-blue-11					: #01579B;
 
+@cyan-1							: #00BCD4;		/* Cyan */
+@cyan-2							: #E0F7FA;
+@cyan-3							: #B2EBF2;
+@cyan-4							: #80DEEA;
+@cyan-5							: #4DD0E1;
+@cyan-6							: #26C6DA;
+@cyan-7							: #00BCD4;
+@cyan-8							: #00ACC1;
+@cyan-9							: #0097A7;
+@cyan-10						: #00838F;
+@cyan-11						: #006064;
 
+@teal-1							: #009688;		/* Teal */
+@teal-2							: #E0F2F1;
+@teal-3							: #B2DFDB;
+@teal-4							: #80CBC4;
+@teal-5							: #4DB6AC;
+@teal-6							: #26A69A;
+@teal-7							: #009688;
+@teal-8							: #00897B;
+@teal-9							: #00796B;
+@teal-10						: #00695C;
+@teal-11						: #004D40;
 
-/* Schatten für Buttons, Cards etc. Der Schatten wird überlagert, um realistischer zu wirken */
-@shadow-1-horizontal	: 0px;
-@shadow-1-vertical		: 4px; 
-@shadow-1-blur			: 8px;
-@shadow-1-width			: 0px;
-@shadow-1-color			: @schwarz-transparent-60;
-@shadow-2-horizontal	: 0px;
-@shadow-2-vertical		: 6px;
-@shadow-2-blur			: 20px;
-@shadow-2-width			: 0px;
-@shadow-2-color			: @schwarz-transparent-20;
-@shadow-1				: @shadow-1-horizontal @shadow-1-vertical @shadow-1-blur @shadow-1-width @shadow-1-color; 
-@shadow-2				: @shadow-2-horizontal @shadow-2-vertical @shadow-2-blur @shadow-2-width @shadow-2-color;
-@shadow					: @shadow-1, @shadow-2; /* <- Kurzform für den Schatten. Wird aus den Variabeln oben gebildet */
+@green-1						: #4CAF50;		/* Gruen */
+@green-2						: #E8F5E9;
+@green-3						: #C8E6C9;
+@green-4						: #A5D6A7;
+@green-5						: #81C784;
+@green-6						: #66BB6A;
+@green-7						: #4CAF50;
+@green-8						: #43A047;
+@green-9						: #388E3C;
+@green-10						: #2E7D32;
+@green-11						: #1B5E20;
 
+@light-green-1					: #8BC34A;		/* Hell Gruen */
+@light-green-2					: #F1F8E9;
+@light-green-3					: #DCEDC8;
+@light-green-4					: #C5E1A5;
+@light-green-5					: #AED581;
+@light-green-6					: #9CCC65;
+@light-green-7					: #8BC34A;
+@light-green-8					: #7CB342;
+@light-green-9					: #689F38;
+@light-green-10					: #558B2F;
+@light-green-11					: #33691E;
 
-/* Mobile - 320px bis 767px (-1px um nicht zu überlappen) */
-@screen-xs				: 320px;
-@screen-xs-min			: @screen-xs;
-@screen-xs-max			: (@screen-sm-min - 1);
+@lime-1							: #CDDC39;		/* Lime */
+@lime-2							: #F9FBE7;
+@lime-3							: #F0F4C3;
+@lime-4							: #E6EE9C;
+@lime-5							: #DCE775;
+@lime-6							: #D4E157;
+@lime-7							: #CDDC39;
+@lime-8							: #C0CA33;
+@lime-9							: #AFB42B;
+@lime-10						: #9E9D24;
+@lime-11						: #827717;
 
-/* Tablet - 768px bis 991x (-1px um nicht zu überlappen) */
-@screen-sm				: 768px;
-@screen-sm-min			: @screen-sm;
-@screen-sm-max			: (@screen-md-min - 1);
+@gelb-1							: #FFEB3B;		/* Gelb */
+@gelb-2							: #FFFDE7;
+@gelb-3							: #FFF9C4;
+@gelb-4							: #FFF59D;
+@gelb-5							: #FFF176;
+@gelb-6							: #FFEE58;
+@gelb-7							: #FFEB3B;
+@gelb-8							: #FDD835;
+@gelb-9							: #FBC02D;
+@gelb-10						: #F9A825;
+@gelb-11						: #F57F17;
 
-/* Tablet - 992px bis 1199px (-1px um nicht zu überlappen) */
-@screen-md				: 992px;
-@screen-md-min			: @screen-md;
-@screen-md-max			: (@screen-lg-min - 1);
+@amber-1						: #FFC107;		/* Amber */
+@amber-2						: #FFF8E1;
+@amber-3						: #FFECB3;
+@amber-4						: #FFE082;
+@amber-5						: #FFD54F;
+@amber-6						: #FFCA28;
+@amber-7						: #FFC107;
+@amber-8						: #FFB300;
+@amber-9						: #FFA000;
+@amber-10						: #FF8F00;
+@amber-11						: #FF6F00;
+	
+@orange-1						: #FF9800;		/* Orange */
+@orange-2						: #FFF3E0;
+@orange-3						: #FFE0B2;
+@orange-4						: #FFCC80;
+@orange-5						: #FFB74D;
+@orange-6						: #FFA726;
+@orange-7						: #FF9800;
+@orange-8						: #FB8C00;
+@orange-9						: #F57C00;
+@orange-10						: #EF6C00;
+@orange-11						: #E65100;
 
-/* Desktop - >= 1200px (-1px um nicht zu überlappen) */
-@screen-lg				: 1200px;
-@screen-lg-min			: @screen-lg;
+@deep-orange-1					: #FF5722;		/* Dunkles Orange */
+@deep-orange-2					: #FBE9E7;
+@deep-orange-3					: #FFCCBC;
+@deep-orange-4					: #FFAB91;
+@deep-orange-5					: #FF8A65;
+@deep-orange-6					: #FF7043;
+@deep-orange-7					: #FF5722;
+@deep-orange-8					: #F4511E;
+@deep-orange-9					: #E64A19;
+@deep-orange-10					: #D84315;
+@deep-orange-11					: #BF360C;
+
+@brown-1						: #795548;		/* Braun */
+@brown-2						: #EFEBE9;
+@brown-3						: #D7CCC8;
+@brown-4						: #BCAAA4;
+@brown-5						: #A1887F;
+@brown-6						: #8D6E63;
+@brown-7						: #795548;
+@brown-8						: #6D4C41;
+@brown-9						: #5D4037;
+@brown-10						: #4E342E;
+@brown-11						: #3E2723;
+
+@grey-1							: #9E9E9E;		/* Grau */
+@grey-2							: #FAFAFA;
+@grey-3							: #F5F5F5;
+@grey-4							: #EEEEEE;
+@grey-5							: #E0E0E0;
+@grey-6							: #BDBDBD;
+@grey-7							: #9E9E9E;
+@grey-8							: #757575;
+@grey-9							: #616161;
+@grey-10						: #424242;
+@grey-11						: #212121;
+
+@blue-grey-1					: #607D8B;		/* Blau Grau */
+@blue-grey-2					: #ECEFF1;
+@blue-grey-3					: #CFD8DC;
+@blue-grey-4					: #B0BEC5;
+@blue-grey-5					: #90A4AE;
+@blue-grey-6					: #78909C;
+@blue-grey-7					: #607D8B;
+@blue-grey-8					: #546E7A;
+@blue-grey-9					: #455A64;
+@blue-grey-10					: #37474F;
+@blue-grey-11					: #263238;
+
+/*==============================================================================*/
+/* 	-	Schatten																*/	
+/*==============================================================================*/
+
+@shadow-1-horizontal			: 0px;
+@shadow-1-vertical				: 4px; 
+@shadow-1-blur					: 8px;
+@shadow-1-width					: 0px;
+@shadow-1-color					: @schwarz-transparent-60;
+@shadow-2-horizontal			: 0px;
+@shadow-2-vertical				: 6px;
+@shadow-2-blur					: 20px;
+@shadow-2-width					: 0px;
+@shadow-2-color					: @schwarz-transparent-20;
+@shadow-1						: @shadow-1-horizontal @shadow-1-vertical @shadow-1-blur @shadow-1-width @shadow-1-color; 
+@shadow-2						: @shadow-2-horizontal @shadow-2-vertical @shadow-2-blur @shadow-2-width @shadow-2-color;
+@shadow							: @shadow-1, @shadow-2; 	/* <- Kurzform für den Schatten.
+
+/*==============================================================================*/
+/* 	-	Media Query´s															*/	
+/*==============================================================================*/
+
+@screen-xs						: 320px;
+@screen-xs-min					: @screen-xs;
+@screen-xs-max					: (@screen-sm-min - 1);		/* Mobile - 320px bis 767px (-1px um nicht zu überlappen) */
+
+@screen-sm						: 768px;
+@screen-sm-min					: @screen-sm;
+@screen-sm-max					: (@screen-md-min - 1);		/* Tablet - 768px bis 991x (-1px um nicht zu überlappen) */
+
+@screen-md						: 992px;
+@screen-md-min					: @screen-md;
+@screen-md-max					: (@screen-lg-min - 1);		/* Tablet - 992px bis 1199px (-1px um nicht zu überlappen) */
+
+@screen-lg						: 1200px;
+@screen-lg-min					: @screen-lg; 				/* Desktop - >= 1200px (-1px um nicht zu überlappen) */
